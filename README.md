@@ -15,11 +15,12 @@ The spread operator is three dots written before an array or object. It basicall
 ### 3. What is the difference between map(), filter(), and forEach()?
 
 All three loop through arrays but they work differently.
-'map()' goes through every item and returns a new array with transformed values. In my project I used map to convert label names into HTML badge strings.
+"map()" goes through every item and returns a new array with transformed values. In my project I used map to convert label names into HTML badge strings.
 
-'filter()' goes through every item and returns a new array with only the items that pass a condition. I used filter in my project to show only open or closed issues depending on which tab is active.
 
-'forEach()' just loops through every item and does something but does not return anything. It is used when you just want to perform an action like adding cards to the DOM. I used forEach to loop through issues and append each card to the grid.
+"filter()" goes through every item and returns a new array with only the items that pass a condition. I used filter in my project to show only open or closed issues depending on which tab is active.
+
+"forEach()" just loops through every item and does something but does not return anything. It is used when you just want to perform an action like adding cards to the DOM. I used forEach to loop through issues and append each card to the grid.
 
 ### 4. What is an arrow function?
 
@@ -34,7 +35,7 @@ Arrow function:
 const greet = (name) => "Hello " + name;
 
 
-I used arrow functions a lot in my project, for example in event listeners and inside map and filter methods. Arrow functions also do not have their own 'this' which makes them useful inside callbacks.
+
 
 ### 5. What are template literals?
 

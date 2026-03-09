@@ -1,128 +1,50 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
-
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
-
----
-
-# Assignment-05: GitHub Issues Tracker
 
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
+### 1. What is the difference between var, let, and const?
+
+"var" is the old way of declaring variables in JavaScript. The problem with var is that it is function scoped, meaning it can be accessed outside of blocks like if statements or loops. It also gets hoisted to the top which can cause bugs.
+
+"let" is the modern way to declare variables that can change. It is block scoped so it stays inside the curly braces where it was defined. I used let in my project for things like currentTab and allIssues because their values change over time.
+
+"const" is used when the value will never be reassigned. It is also block scoped like let. I used const for API_BASE because the URL never changes. The difference is that const does not mean the value is frozen completely, for example you can still push items into a const array.
+
+### 2. What is the spread operator (...)?
+
+The spread operator is three dots written before an array or object. It basically unpacks or spreads out all the elements. For example if I have two arrays and want to combine them I can write [...array1, ...array2] instead of using concat. I also used a similar idea when filtering issues, where I spread results to create a new array without changing the original. It is very useful when you want to copy an array or merge objects without modifying the originals.
+
+### 3. What is the difference between map(), filter(), and forEach()?
+
+All three loop through arrays but they work differently.
+'map()' goes through every item and returns a new array with transformed values. In my project I used map to convert label names into HTML badge strings.
+
+'filter()' goes through every item and returns a new array with only the items that pass a condition. I used filter in my project to show only open or closed issues depending on which tab is active.
+
+'forEach()' just loops through every item and does something but does not return anything. It is used when you just want to perform an action like adding cards to the DOM. I used forEach to loop through issues and append each card to the grid.
+
+### 4. What is an arrow function?
+
+An arrow function is a shorter way to write functions in JavaScript. Instead of writing function keyword you use an arrow like =>. For example:
+
+Normal function:
+function greet(name) {
+  return "Hello " + name;
+}
+
+Arrow function:
+const greet = (name) => "Hello " + name;
 
 
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
+I used arrow functions a lot in my project, for example in event listeners and inside map and filter methods. Arrow functions also do not have their own 'this' which makes them useful inside callbacks.
 
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
+### 5. What are template literals?
 
+Template literals are a way to write strings in JavaScript using backtick characters instead of normal quotes. The best thing about them is you can put variables directly inside the string using ${} syntax without having to use plus signs to join strings together.
 
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
+For example instead of writing:
 
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
+"Hello " + name + " you have " + count + " issues"
 
+With template literals I can write:
 
----
-
-## 📝 Main Requirements
-
-## 🎨 Design Part
-
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
-
-## Main Page: 
-
-### Navbar: 
-
-- Navbar with website logo/name on the left
-- Search input and button on the right
-
-### Tab Section like Figma: 
-
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
-
-
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status 
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on an issue  card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
-
+`Hello ${name} you have ${count} issues`
 

@@ -1,5 +1,9 @@
+/* GitHub Issues Tracker - styles */
 
-#signin-btn:hover { background-color: #4338ca; cursor: pointer; }
+#signin-btn:hover {
+  background-color: #4338ca;
+  cursor: pointer;
+}
 
 input:focus {
   outline: none;
@@ -7,37 +11,151 @@ input:focus {
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
-.tab-btn { background-color: #f3f4f6; color: #6b7280; border: 1px solid transparent; cursor: pointer; }
-.tab-btn:hover { background-color: #e5e7eb; color: #374151; }
-.active-tab { background-color: #4f46e5 !important; color: #fff !important; }
+/* Tabs */
+.tab-btn {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
 
+.tab-btn:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.active-tab {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+/* Cards */
 .issue-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 16px;
-  border-top: 4px solid transparent;
   box-shadow: 0 1px 3px rgba(0,0,0,0.07);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.issue-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
-.open-card { border-top-color: #22c55e; }
-.closed-card { border-top-color: #9333ea; }
 
-.priority-badge { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; }
-.priority-high { background-color: #fee2e2; color: #dc2626; }
-.priority-medium { background-color: #fef9c3; color: #b45309; }
-.priority-low { background-color: #f0fdf4; color: #16a34a; }
+.issue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
 
-.label-badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; display: inline-flex; align-items: center; gap: 3px; }
-.label-bug { background-color: #fee2e2; color: #dc2626; }
-.label-enhancement { background-color: #ede9fe; color: #7c3aed; }
-.label-documentation { background-color: #e0f2fe; color: #0369a1; }
-.label-help-wanted { background-color: #fef9c3; color: #b45309; }
-.label-good-first-issue { background-color: #dcfce7; color: #16a34a; }
+.open-card {
+  border: 2px solid #22c55e;
+  border-top: 4px solid #22c55e;
+}
+
+.closed-card {
+  border: 2px solid #9333ea;
+  border-top: 4px solid #9333ea;
+}
+
+/* Priority badges - cards */
+.priority-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.priority-high {
+  background-color: #fecaca;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.priority-medium {
+  background-color: #fef08a;
+  color: #ca8a04;
+  border: 1px solid #fde047;
+}
+
+.priority-low {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+/* Priority badges - modal */
+.modal-priority-high {
+  background-color: #ef4444;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.modal-priority-medium {
+  background-color: #f59e0b;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.modal-priority-low {
+  background-color: #6b7280;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Label badges */
+.label-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.label-bug {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.label-enhancement {
+  background-color: #ede9fe;
+  color: #7c3aed;
+  border: 1px solid #c4b5fd;
+}
+
+.label-documentation {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+.label-help-wanted {
+  background-color: #fef9c3;
+  color: #b45309;
+  border: 1px solid #fde047;
+}
+
+.label-good-first-issue {
+  background-color: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
 
 .icon-open { color: #22c55e; }
 .icon-closed { color: #9333ea; }
+
+/* Spinner */
 .spinner-ring {
   width: 44px;
   height: 44px;
@@ -49,4 +167,41 @@ input:focus {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* Modal status badges */
+.status-badge-open {
+  background-color: #22c55e;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.status-badge-closed {
+  background-color: #9333ea;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  nav a {
+    font-size: 14px;
+  }
+
+  nav img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .issue-card {
+    padding: 12px;
+  }
 }

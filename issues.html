@@ -7,7 +7,92 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen">
 
+  <!-- Navbar -->
+  <nav class="bg-white text-gray-900 px-5 py-3 flex items-center justify-between sticky top-0 z-40 shadow-sm border-b border-gray-200">
+    <a href="issues.html" class="flex items-center gap-2 font-bold text-lg">
+      <img src="assets/github-logo.png" alt="GitHub Logo" class="w-8 h-8" />
+      GitHub Issues Tracker
+    </a>
+    <div class="flex items-center gap-3">
+      <div class="relative hidden sm:block">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search issues..."
+          class="bg-gray-100 text-gray-900 placeholder-gray-400 text-sm rounded-lg pl-9 pr-3 py-2 w-52 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        />
+        <svg class="absolute left-2.5 top-2.5 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+      </div>
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+        + New Issue
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile search -->
+  <div class="sm:hidden bg-white border-b border-gray-200 px-4 pb-3">
+    <div class="relative">
+      <input
+        id="search-input-mobile"
+        type="text"
+        placeholder="Search issues..."
+        class="bg-gray-100 text-gray-900 placeholder-gray-400 text-sm rounded-lg pl-9 pr-3 py-2 w-full focus:outline-none focus:ring-1 focus:ring-indigo-500"
+      />
+      <svg class="absolute left-2.5 top-2.5 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- Tabs -->
+    <div class="flex gap-2 mb-5">
+      <button id="tab-all" class="tab-btn active-tab px-5 py-1.5 rounded-full text-sm font-medium">All</button>
+      <button id="tab-open" class="tab-btn px-5 py-1.5 rounded-full text-sm font-medium">Open</button>
+      <button id="tab-closed" class="tab-btn px-5 py-1.5 rounded-full text-sm font-medium">Closed</button>
+    </div>
+
+    <!-- Banner -->
+    <div class="border-2 border-dashed border-indigo-300 rounded-xl px-5 py-4 mb-6 flex items-center justify-between bg-white">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-xl">🐞</div>
+        <div>
+          <p id="issue-count" class="font-bold text-gray-800 text-base">0 Issues</p>
+          <p class="text-gray-500 text-xs">Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <span class="flex items-center gap-1.5 text-gray-600">
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span> Open
+        </span>
+        <span class="flex items-center gap-1.5 text-gray-600">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-600 inline-block"></span> Closed
+        </span>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="spinner" class="flex justify-center py-16">
+      <div class="spinner-ring"></div>
+    </div>
+
+    <!-- Issues grid -->
+    <div id="issues-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden"></div>
+
+    <!-- No results -->
+    <div id="no-results" class="text-center py-16 text-gray-400 hidden">
+      <p class="text-4xl mb-3">🔍</p>
+      <p class="text-lg font-medium">No issues found</p>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
